@@ -1,0 +1,24 @@
+Package: ModCon
+Type: Package
+Title: ModCon
+Version: 0.99.0
+Author: Johannes Ptok
+Maintainer: Johannes Ptok <Johannes.Ptok@hhu.de>
+Description: Proposing a nucleotide sequence surrounding for splice donors to either activate or repress donor usage.
+License: file LICENSE
+Encoding: UTF-8
+LazyData: true
+VignetteBuilder: knitr
+Depends: 
+    data.table,
+    parallel,
+    utils,
+    stats,
+    R (>= 3.6)
+Suggests: 
+    testthat,
+    knitr
+selectBestAndMean: Installation of any version of Perl is needed (e.g. strawberry perl).
+biocViews: FunctionalGenomics, AlternativeSplicing
+URL: https://github.com/caggtaagtat/ModCon
+RoxygenNote: 7.1.1

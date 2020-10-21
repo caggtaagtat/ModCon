@@ -1,0 +1,37 @@
+importFrom(stats, na.omit)
+importFrom(parallel, detectCores)
+importFrom(parallel, makeCluster)
+importFrom(parallel, clusterExport)
+importFrom(parallel, parLapply)
+importFrom(parallel, stopCluster)
+importFrom(data.table, rbindlist)
+importFrom(utils, head)
+
+## Export functions
+export(ModCon)
+export(calculateHZEIint)
+export(calculateMaxEntScanScore)
+export(changeSequenceHZEI)
+export(createFilialSequencePopulation)
+export(decreaseGTsiteStrength)
+export(degradeSAs)
+export(degradeSDs)
+export(generateRandomCodonsPerAA)
+export(getOverlappingVectorsFromVector)
+export(increaseGTsiteStrength)
+export(ModCon)
+export(mutatePopulation)
+export(recombineTwoSequences)
+export(selectBestAndMean)
+export(selectMatingIndividuals)
+export(slidingWindowHZEImanipulation)
+export(createCodonMatrix)
+
+## Export required data
+export(hex)
+export(hex2)
+export(hbg)
+export(Codons)
+
+
+
