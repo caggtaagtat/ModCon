@@ -3,7 +3,7 @@
 \title{ModCon}
 \usage{
 ModCon(cds, sdSeqStartPosition, upChangeCodonsIn=16, downChangeCodonsIn=16,
-modconMode="optimalContext", sdMaximalHBS=10, acMaximalMaxent=4, optiRate=100,
+optimizeContext="optimalContext", sdMaximalHBS=10, acMaximalMaxent=4, optiRate=100,
 nGenerations=30, parentSize=300, startParentSize=1000, bestRate=40,
 semiLuckyRate=20, luckyRate=5, mutationRate=1e-04, nCores=-1)
 }
@@ -12,7 +12,7 @@ semiLuckyRate=20, luckyRate=5, mutationRate=1e-04, nCores=-1)
 \item{sdSeqStartPosition}{Numeric value of the position of the first nucleotide of the splice donor of interest}
 \item{upChangeCodonsIn}{Numeric value of number of codons to change upstream of the donor site of interest}
 \item{downChangeCodonsIn}{Numeric value of number of codons to change downstream of the donor site of interest}
-\item{modconMode}{Character value which determines, if 'optimalContext' (the default) the donor context will be adjusted to increase the HZEI weight, if changed to 'suboptimalContext', the HZEI weight will be decreased.}
+\item{optimizeContext}{Character value which determines, if TRUE (the default) the donor context will be adjusted to increase the splice site HEXplorer weight (SSHW), if FALSE, the SSHW will be decreased.}
 \item{sdMaximalHBS}{Numeric value of minimal HBS of SDs which should be tried to be degraded in their intrinsic strength}
 \item{acMaximalMaxent}{Numeric value of minimal MaxEntScan score of SAs which should be tried to be degraded in their intrinsic strength}
 \item{optiRate}{Numeric value setting level of HZEI integral optimization}
@@ -30,7 +30,7 @@ semiLuckyRate=20, luckyRate=5, mutationRate=1e-04, nCores=-1)
 Execute ModCon on a donor site within a coding sequnece either increasing or decreasing its HZEI weight.
 }
 \value{
-Creates a character value of a coding nucleotide sequence encoding the same amino acid sequence as the entered \code{cds}, but with an alternative nucleotide surrounding around the splice donor (SD) sequence position, stated with \code{sdSeqStartPosition}. Depending on the entered \code{modconMode}, the SD surrounding is either adjusted aiming to enhance or decrease the splice site HEXplorer wheigth.
+Creates a character value of a coding nucleotide sequence encoding the same amino acid sequence as the entered \code{cds}, but with an alternative nucleotide surrounding around the splice donor (SD) sequence position, stated with \code{sdSeqStartPosition}. Depending on the entered \code{optimizeContext}, the SD surrounding is either adjusted aiming to enhance or decrease the splice site HEXplorer wheigth.
 }
 \examples{
 ## Load R packages
@@ -72,7 +72,7 @@ print(finalSequence)
 
 ## Execute ModCon
 finalSequence <- ModCon(cds, 1001, upChangeCodonsIn=16, downChangeCodonsIn=16,
-modconMode='optimalContext', sdMaximalHBS=10, acMaximalMaxent=4,
+optimizeContext=FALSE, sdMaximalHBS=10, acMaximalMaxent=4,
 optiRate=50, nGenerations=5, parentSize=200, startParentSize=800,
 bestRate=50, semiLuckyRate=10, luckyRate=5, mutationRate=1e-03, nCores=1)
 

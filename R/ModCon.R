@@ -1,6 +1,6 @@
 ## ModCon function
 ModCon <- function(cds, sdSeqStartPosition, upChangeCodonsIn=16,
-                   downChangeCodonsIn=16, modconMode="optimalContext",
+                   downChangeCodonsIn=16, optimizeContext=TRUE,
                    sdMaximalHBS=10, acMaximalMaxent=4, optiRate=100,
                    nGenerations=30, parentSize=300, startParentSize=1000,
                    bestRate=40, semiLuckyRate=20, luckyRate=5,
@@ -29,10 +29,10 @@ ModCon <- function(cds, sdSeqStartPosition, upChangeCodonsIn=16,
                 " be an numeric and greater 4."))
   }
 
-  ## modconMode
-  if ((!modconMode %in% c("optimalContext", "suboptimalContext"))) {
-    stop(paste0("Setting of the variable 'modconMode' not correct. Please",
-                " either choose the value 'optimalContext' or 'suboptimalContext'."))
+  ## optimizeContext
+  if (!is.logical(optimizeContext)) {
+    stop(paste0("Setting of the variable 'optimizeContext' not correct. Must",
+                " be a logical value."))
   }
 
   ## sdMaximalHBS
@@ -104,7 +104,7 @@ ModCon <- function(cds, sdSeqStartPosition, upChangeCodonsIn=16,
   codonsInsert <- Codons
 
   ## If SD context will be optimized to enhance usage
-  if (modconMode == "optimalContext") {
+  if (optimizeContext) {
 
     ## Find position of first nucleotid in first codon upstream of SD
     endPos <- sdSeqStartPosition
