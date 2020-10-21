@@ -3,7 +3,7 @@ ModCon is a tool to manipulate the nucleotide sequence surrounding of splice don
 <br/><br/>
 ## Installation and Usage
 #### 1. Install dependencies
-The ModCon tool was developed as an R package (version ≥ R-3.3.2) using integrated Perl scripts (version ≥ Perl 5.18.1) for MaxEntScan score calculations. Therefore, if necessary please install Perl and R first. If more than one core is available during execution, the script performs parallel HZEI calculation with as much cores as possible (recommended 4-8 cores if possible). In total three R packages are required to execute the application, namely “parallel”, “utils” and "data.table".
+The ModCon tool was developed as an R package (version ≥ R-4.0.3) using integrated Perl scripts (version ≥ Perl 5.18.1) for MaxEntScan score calculations. Therefore, if necessary please install Perl and R first. If wanted, the script performs parallel HZEI calculation parallel with multiple cores. In total three R packages are required to execute the application, namely “parallel”, “utils” and "data.table".
 <br/><br/>
 In order to execute the ModCon R-script, please download every file of the ModCon repository for installation or use the devtools option to install R packages from github.<br/>
 `library(devtools)`<br/>
