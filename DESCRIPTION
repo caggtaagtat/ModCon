@@ -2,8 +2,7 @@ Package: ModCon
 Type: Package
 Title: ModCon
 Version: 0.99.0
-Author: Johannes Ptok
-Maintainer: Johannes Ptok <Johannes.Ptok@hhu.de>
+Authors@R: c(person("Johannes", "Ptok", role = c("aut", "cre"), email = "Johannes.Ptok@posteo.de"), person("Gene", "Yeo", role = c("ctb"), email = "geneyeo@ucsd.edu", comment = "first author for perl script to calculate MaxEntScan score of splice sites."))
 Description: Proposing a nucleotide sequence surrounding for splice donors to either activate or repress donor usage.
 License: file LICENSE
 Encoding: UTF-8
