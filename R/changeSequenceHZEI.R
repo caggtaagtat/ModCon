@@ -152,6 +152,9 @@ changeSequenceHZEI <- function(inSeq, increaseHZEI=TRUE, nGenerations=30,
 
     ## As long as STATUS implies, continue to generate new generations
     while (STATUS == "RUNNING") {
+      
+      ## If all parent sequences are the same stop the Genetic algorithm
+      if(length(unique(parent0)) == 1) STATUS <- "STOP"
 
       ## Select fittest sequence plus some random individuals for recombination
       matingIndividuals <- selectMatingIndividuals(parent0,
