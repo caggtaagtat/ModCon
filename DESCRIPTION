@@ -17,7 +17,13 @@ Depends:
 Suggests: 
     testthat,
     knitr,
-    rmarkdown
+    rmarkdown,
+    dplyr,
+    shinycssloaders,
+    shiny,
+    shinyFiles,
+    shinydashboard,
+    shinyjs
 selectBestAndMean: Installation of any version of Perl is needed (e.g. strawberry perl).
 biocViews: FunctionalGenomics, AlternativeSplicing
 URL: https://github.com/caggtaagtat/ModCon
