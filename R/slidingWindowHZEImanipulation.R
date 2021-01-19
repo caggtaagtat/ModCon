@@ -8,13 +8,13 @@ slidingWindowHZEImanipulation <- function(inSeq,
 
   ## increaseHZEI
   if (!is.logical(increaseHZEI)) {
-    stop(paste0("ERROR: Setting of variable 'increaseHZEI' not as",
-                " expected. Must be one logical value."))
+    stop("ERROR: Setting of variable 'increaseHZEI' not as",
+                " expected. Must be one logical value.")
   }
 
   if (!all(strsplit(inSeq, "")[[1]] %in% c("a", "c", "g", "t", "G", "C", "T", "A")))
-    stop(paste0("ERROR during setting of variable 'CDS'. The entered sequence must be a",
-         " character string of A C G and T."))
+    stop("ERROR during setting of variable 'CDS'. The entered sequence must be a",
+         " character string of A C G and T.")
 
   ## Transformation of the sequence to upper case
   wtSequence <- toupper(inSeq)

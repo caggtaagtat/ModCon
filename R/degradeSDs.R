@@ -3,20 +3,20 @@ degradeSDs <- function(fanFunc, maxhbs=10, increaseHZEI=TRUE) {
 
   ## Check if fanFunc matrix has the right format
   if (!is.logical(increaseHZEI)) {
-    stop(paste0("ERROR: Setting of variable 'increaseHZEI' not as expected.",
-                " Must be one logical value."))
+    stop("ERROR: Setting of variable 'increaseHZEI' not as expected.",
+                " Must be one logical value.")
   }
 
   ## Check if fanFunc matrix has the right format
   if ((dim(fanFunc)[[1]] != 2) | (dim(fanFunc)[[2]] < 4)) {
-    stop(paste0("ERROR: Dimensions of codon matrix 'fanFunc' not as expected.",
-                " Must show two rows and at least 4 columns"))
+    stop("ERROR: Dimensions of codon matrix 'fanFunc' not as expected.",
+                " Must show two rows and at least 4 columns")
   }
 
   ## Check if fanFunc matrix has the right format
   if (!is.numeric(maxhbs)) {
-    stop(paste0("ERROR: Setting of variable 'maxhbs' not as expected. Must",
-                " hold one numeric value."))
+    stop("ERROR: Setting of variable 'maxhbs' not as expected. Must",
+                " hold one numeric value.")
   }
 
   ## Check if codonsInsert table is present
