@@ -8,91 +8,91 @@ ModCon <- function(cds, sdSeqStartPosition, upChangeCodonsIn=16,
 
   ## Error messages for wrong entries cds
   if (!all(strsplit(cds, "")[[1]] %in% c("a", "c", "g", "t", "G", "C", "T", "A")))
-    stop(paste0("ERROR during setting of variable 'cds'. The entered sequence",
-                " must be a character string of A C G and T."))
+    stop("ERROR during setting of variable 'cds'. The entered sequence",
+                " must be a character string of A C G and T.")
 
   ## sdSeqStartPosition
   if (sdSeqStartPosition < 1 | sdSeqStartPosition > (nchar(cds) - 10)) {
-    stop(paste0("ERROR during setting of variable 'sdSeqStartPosition'. SD",
-                " sequence not within cds."))
+    stop("ERROR during setting of variable 'sdSeqStartPosition'. SD",
+                " sequence not within cds.")
   }
 
   ## upChangeCodonsIn
   if (!is.numeric(upChangeCodonsIn) | (upChangeCodonsIn < 4)) {
-    stop(paste0("ERROR during setting of variable 'upChangeCodonsIn'. Must",
-                " be numeric and greater 4."))
+    stop("ERROR during setting of variable 'upChangeCodonsIn'. Must",
+                " be numeric and greater 4.")
   }
 
   ## downChangeCodonsIn
   if (!is.numeric(downChangeCodonsIn) | (downChangeCodonsIn < 4)) {
-    stop(paste0("ERROR during setting of variable 'downChangeCodonsIn'. Must",
-                " be an numeric and greater 4."))
+    stop("ERROR during setting of variable 'downChangeCodonsIn'. Must",
+                " be an numeric and greater 4.")
   }
 
   ## optimizeContext
   if (!is.logical(optimizeContext)) {
-    stop(paste0("Setting of the variable 'optimizeContext' not correct. Must",
-                " be a logical value."))
+    stop("Setting of the variable 'optimizeContext' not correct. Must",
+                " be a logical value.")
   }
 
   ## sdMaximalHBS
   if (sdMaximalHBS < 1.8 | sdMaximalHBS > 23.8) {
-    stop(paste0("ERROR during setting of variable 'sdMaximalHBS'. HBS limit",
-                " must be within 1.8 to 23.8."))
+    stop("ERROR during setting of variable 'sdMaximalHBS'. HBS limit",
+                " must be within 1.8 to 23.8.")
   }
 
   ## sdMaximalHBS
   if (!is.numeric(sdMaximalHBS)) {
-    stop(paste0("ERROR during setting of variable 'acMaximalMaxent'.",
-                " MaxEntScan score limit must be numeric."))
+    stop("ERROR during setting of variable 'acMaximalMaxent'.",
+                " MaxEntScan score limit must be numeric.")
   }
 
   ## optiRate
   if (!is.numeric(optiRate) | optiRate < 0) {
-    stop(paste0("ERROR during setting of variable 'optiRate'. optiRate",
-                " must be numeric and not lower than 0 ."))
+    stop("ERROR during setting of variable 'optiRate'. optiRate",
+                " must be numeric and not lower than 0 .")
   }
 
   ## nGenerations
   if (!is.numeric(nGenerations) | nGenerations < 2) {
-    stop(paste0("ERROR during setting of variable 'nGenerations'. nGenerations",
-                " must be numeric and greater 1."))
+    stop("ERROR during setting of variable 'nGenerations'. nGenerations",
+                " must be numeric and greater 1.")
   }
 
   ## parentSize
   if (!is.numeric(parentSize) | parentSize < 10) {
-    stop(paste0("ERROR during setting of variable 'parentSize'. parentSize",
-                " must be numeric and greater 9."))
+    stop("ERROR during setting of variable 'parentSize'. parentSize",
+                " must be numeric and greater 9.")
   }
 
   ## startParentSize
   if (!is.numeric(startParentSize) | startParentSize < 10) {
-    stop(paste0("ERROR during setting of variable 'startParentSize'. startParentSize",
-                " must be numeric and greater 9."))
+    stop("ERROR during setting of variable 'startParentSize'. startParentSize",
+                " must be numeric and greater 9.")
   }
 
   ## bestRate
   if (!is.numeric(bestRate) | bestRate <= 0) {
-    stop(paste0("ERROR during setting of variable 'bestRate'. bestRate must",
-                " be numeric and greater 0."))
+    stop("ERROR during setting of variable 'bestRate'. bestRate must",
+                " be numeric and greater 0.")
   }
 
   ## semiLuckyRate
   if (!is.numeric(semiLuckyRate) | semiLuckyRate <= 0) {
-    stop(paste0("ERROR during setting of variable 'semiLuckyRate'. semiLuckyRate",
-                " must be numeric and greater 0."))
+    stop("ERROR during setting of variable 'semiLuckyRate'. semiLuckyRate",
+                " must be numeric and greater 0.")
   }
 
   ## luckyRate
   if (!is.numeric(luckyRate) | luckyRate <= 0) {
-    stop(paste0("ERROR during setting of variable 'luckyRate'. luckyRate",
-                " must be numeric and greater 0."))
+    stop("ERROR during setting of variable 'luckyRate'. luckyRate",
+                " must be numeric and greater 0.")
   }
 
   ## mutationRate
   if (!is.numeric(mutationRate) | mutationRate < 0 | mutationRate > 1) {
-    stop(paste0("ERROR during setting of variable 'mutationRate'. mutationRate",
-                " must be numeric and range from 0 to 1."))
+    stop("ERROR during setting of variable 'mutationRate'. mutationRate",
+                " must be numeric and range from 0 to 1.")
   }
 
   ## Define region of interest
@@ -231,9 +231,9 @@ ModCon <- function(cds, sdSeqStartPosition, upChangeCodonsIn=16,
     cds <- paste(cds, collapse = "")
 
     ## Report important information about adjustment
-    message(paste("Position of first nt of SD seq:", sdSeqStartPosition))
-    message(paste("Length of substituted sequences upstream and dowstream:",
-                  (upChangeCodons + 1), "and", downChangeCodons, "nt"))
+    message("Position of first nt of SD seq:", sdSeqStartPosition)
+    message("Length of substituted sequences upstream and dowstream:",
+                  (upChangeCodons + 1), "and", downChangeCodons, "nt")
 
   }
 

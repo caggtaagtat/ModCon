@@ -7,74 +7,74 @@ changeSequenceHZEI <- function(inSeq, increaseHZEI=TRUE, nGenerations=30,
 
   ## Error messages for wrong entries sdMaximalHBS
   if (sdMaximalHBS < 1.8 | sdMaximalHBS > 23.8) {
-    stop(paste0("ERROR during setting of variable 'sdMaximalHBS'.",
-                " HBS limit must be within 1.8 to 23.8."))
+    stop("ERROR during setting of variable 'sdMaximalHBS'.",
+                " HBS limit must be within 1.8 to 23.8.")
   }
 
   ## sdMaximalHBS
   if (!is.numeric(sdMaximalHBS)) {
-    stop(paste0("ERROR during setting of variable 'acMaximalMaxent'.",
-                " MaxEntScan score limit must be numeric."))
+    stop("ERROR during setting of variable 'acMaximalMaxent'.",
+                " MaxEntScan score limit must be numeric.")
   }
 
   ## optiRate
   if (!is.numeric(optiRate) | optiRate < 0) {
-    stop(paste0("ERROR during setting of variable 'optiRate'.",
-                " optiRate must be numeric and not lower than 0 ."))
+    stop("ERROR during setting of variable 'optiRate'.",
+                " optiRate must be numeric and not lower than 0 .")
   }
 
   ## nGenerations
   if (!is.numeric(nGenerations) | nGenerations < 2) {
-    stop(paste0("ERROR during setting of variable 'nGenerations'.",
-                " nGenerations must be numeric and greater 1."))
+    stop("ERROR during setting of variable 'nGenerations'.",
+                " nGenerations must be numeric and greater 1.")
   }
 
   ## parentSize
   if (!is.numeric(parentSize) | parentSize < 10) {
-    stop(paste0("ERROR during setting of variable 'parentSize'.",
-                " parentSize must be numeric and greater 9."))
+    stop("ERROR during setting of variable 'parentSize'.",
+                " parentSize must be numeric and greater 9.")
   }
 
   ## startParentSize
   if (!is.numeric(startParentSize) | startParentSize < 10) {
-    stop(paste0("ERROR during setting of variable 'startParentSize'.",
-                " startParentSize must be numeric and greater 9."))
+    stop("ERROR during setting of variable 'startParentSize'.",
+                " startParentSize must be numeric and greater 9.")
   }
 
   ## bestRate
   if (!is.numeric(bestRate) | bestRate <= 0) {
-    stop(paste0("ERROR during setting of variable 'bestRate'.",
-                " bestRate must be numeric and greater 0."))
+    stop("ERROR during setting of variable 'bestRate'.",
+                " bestRate must be numeric and greater 0.")
   }
 
   ## semiLuckyRate
   if (!is.numeric(semiLuckyRate) | semiLuckyRate <= 0) {
-    stop(paste0("ERROR during setting of variable 'semiLuckyRate'.",
-                " semiLuckyRate must be numeric and greater 0."))
+    stop("ERROR during setting of variable 'semiLuckyRate'.",
+                " semiLuckyRate must be numeric and greater 0.")
   }
 
   ## luckyRate
   if (!is.numeric(luckyRate) | luckyRate <= 0) {
-    stop(paste0("ERROR during setting of variable 'luckyRate'.",
-                " luckyRate must be numeric and greater 0."))
+    stop("ERROR during setting of variable 'luckyRate'.",
+                " luckyRate must be numeric and greater 0.")
   }
 
   ## mutationRate
   if (!is.numeric(mutationRate) | mutationRate < 0 | mutationRate > 1) {
-    stop(paste0("ERROR during setting of variable 'mutationRate'.",
-                " mutationRate must be numeric and range from 0 to 1."))
+    stop("ERROR during setting of variable 'mutationRate'.",
+                " mutationRate must be numeric and range from 0 to 1.")
   }
 
   ## increaseHZEI
   if (!is.logical(increaseHZEI)) {
-    stop(paste0("ERROR: Setting of variable 'increaseHZEI' not as",
-                " expected. Must be one logical value."))
+    stop("ERROR: Setting of variable 'increaseHZEI' not as",
+                " expected. Must be one logical value.")
   }
 
   ## nCores
   if (!is.numeric(nCores)) {
-    stop(paste0("ERROR: Setting of variable 'nCores' not as expected.",
-                " Must be one numeric value e.g. 1 or 4."))
+    stop("ERROR: Setting of variable 'nCores' not as expected.",
+                " Must be one numeric value e.g. 1 or 4.")
   }
 
   wtSequence <- inSeq

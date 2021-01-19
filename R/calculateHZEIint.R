@@ -4,8 +4,8 @@ calculateHZEIint <- function(ntSequence) {
   ## Error messages for wrong entries ntSequence
   if ((!all(strsplit(ntSequence, "")[[1]] %in% c("a", "c",
           "g", "t", "G", "C", "T", "A")))|(nchar(ntSequence)<11))
-    stop(paste0("ERROR during setting of variable 'ntSequence'.",
-    "The entered sequence must be a character string of A C G and T."))
+    stop("ERROR during setting of variable 'ntSequence'.",
+    "The entered sequence must be a character string of A C G and T.")
 
   out <- getOverlappingVectorsFromVector(strsplit(toupper(ntSequence),
                                                   "")[[1]], 6, 5)

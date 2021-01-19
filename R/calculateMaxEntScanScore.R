@@ -6,22 +6,22 @@ calculateMaxEntScanScore <- function(seqVector, ssType) {
 
   ## Error messages for wrong entries seq
   if(!ssType %in% c(3,5))
-    stop(paste0("ERROR during setting of variable 'ssType'.",
-    "The entered ss type must be numeric value 3 or 5, for SA or SD sites."))
+    stop("ERROR during setting of variable 'ssType'.",
+    "The entered ss type must be numeric value 3 or 5, for SA or SD sites.")
 
   if(((ssType == 3) & (unique(nchar(seqVector)) != 23)))
-    stop(paste0("ERROR during setting of variable 'seqVector'.",
-    "3'ss (SA) sequences must be of length 23 for MaxEntScan score calculation."))
+    stop("ERROR during setting of variable 'seqVector'.",
+    "3'ss (SA) sequences must be of length 23 for MaxEntScan score calculation.")
 
   if((ssType == 5) & (unique(nchar(seqVector)) != 9))
-    stop(paste0("ERROR during setting of variable 'seqVector'.",
-    "3'ss (SA) sequences must be of length 9 for MaxEntScan score calculation."))
+    stop("ERROR during setting of variable 'seqVector'.",
+    "3'ss (SA) sequences must be of length 9 for MaxEntScan score calculation.")
 
   if (!all(strsplit(paste(seqVector, collapse = ""), "")[[1]] %in% c("a",
                                                "c", "g", "t", "G", "C", "T", "A")))
-    warning(paste("WARNING during setting of variable 'seqVector'.",
+    warning("WARNING during setting of variable 'seqVector'.",
     "One or more sequences showed characters apart from A C G and T.",
-    " MaxEntScan score calculation not possible for the affected sequences."))
+    " MaxEntScan score calculation not possible for the affected sequences.")
 
 
   ## Save current working directory
