@@ -215,6 +215,8 @@ cdsSAlow
 `cdsSDlow` states a coding sequence, encoding the same amino acid as the input CDS. However, every potential splice donor sequence within the CDS, which exceeds a Hbond score treshold (`maxhbs`) will be aimed to be degraded in its intrinsic strength as much as possible. If, additionally, potential splice acceptor sites should be degraded in their intrinsic strengt, the following function `degradeSAs` will reduce the number of potential relevant splice acceptor sites within the CDS.
 `cdsSAlow` states a coding sequence, encoding the same amino acid as the input CDS. However, every potential splice donor sequence within the CDS, which exceeds a Hbond score treshold (`maxhbs`) and every potential splice acceptor site, which exceeds a certain MaxEntScan score treshold, will be aimed to be degraded in its intrinsic strength as much as possible.
 
+A graphic user interface based on shiny can be opened with the function `startModConApp.Rd`.
+
 # Session info
 
 ```{r sessionInfo}
