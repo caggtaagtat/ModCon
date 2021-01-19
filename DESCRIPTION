@@ -2,7 +2,7 @@ Package: ModCon
 Type: Package
 Title: ModCon
 Version: 0.99.0
-Authors@R: person("Johannes", "Ptok", role = c("aut", "cre"), email = "Johannes.Ptok@posteo.de")
+Authors@R: person("Johannes", "Ptok", role = c("aut", "cre"), email = "Johannes.Ptok@posteo.de", comment = c(ORCID = "0000-0002-0322-5649"))
 Description: Collection of functions to calculate a nucleotide sequence surrounding for splice donors sites to either activate or repress donor usage. The proposed alternative nucleotide sequence encodes the same amino acid and could be applied e.g. in reporter systems to silence or activate cryptic splice donor sites.
 License: GPL-3
 Encoding: UTF-8
