@@ -63,6 +63,6 @@ calculateMaxEntScanScore <- function(seqVector, ssType) {
 }
 
 
-# use_data(Codons, hbg, hex, hex2, cds, overwrite = TRUE)
+# use_data(Codons, hbg, hex,  cds, overwrite = TRUE)
 
 

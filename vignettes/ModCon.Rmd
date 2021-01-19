@@ -13,8 +13,7 @@ vignette: >
 ```{r setup, echo=FALSE, results="hide"}
 knitr::opts_chunk$set(tidy = FALSE,
                       cache = FALSE,
-                      dev = "png",
-                      message = FALSE, error = FALSE, warning = TRUE)
+                      dev = "png")
 ```	
 
 
@@ -91,20 +90,30 @@ cds <- paste0('ATGGAAGACGCCAAAAACATAAAGAAAGGCCCGGCGCCATTCTATCCGCTG',
 
 ## Executing ModCon to increase the splice site HEXplorer weigth of 
 ## the splice donor at position 103
-cdsSSHWincreased <- ModCon(cds, 103)
+cdsSSHWincreased <- ModCon(cds, 103, nCores=1)
 cdsSSHWincreased
 
 ```
 
-To achive the minimal SSHW, the ModCon function parameter `modconMode`
-has to be set to `suboptimalContext`.
+The resulting character string holds the alternative nucleotide sequence
+with an increased SSHW for the index splice donor site at position 103. 
+The new CDS encodes the same amino acid sequence as before.
+
+
+To achive the minimal SSHW, the ModCon function parameter `optimizeContext`
+has to be set to `FALSE`.
 
 ```{r, eval=TRUE}
 ## Executing ModCon to decrease the splice site HEXplorer weigth of 
 ## the splice donor at position 103
-cdsSSHWdecreased <- ModCon(cds, 103, modconMode='suboptimalContext')
+cdsSSHWdecreased <- ModCon(cds, 103, optimizeContext=FALSE, nCores=1)
 cdsSSHWdecreased
 ```
+
+The resulting character string holds the alternative nucleotide sequence
+with an decreased SSHW for the index splice donor site at position 103. 
+Again, the new CDS encodes the same amino acid sequence as before.
+
 
 The extent of SSHW minimization and maximization can alternatively be 
 limited to e.g. 60% of the maximum or minimum setting the `optiRate` 
@@ -113,11 +122,21 @@ to 60. The progress is omitted per generation (not shown in this vignette).
 ```{r, eval=TRUE}
 ## Executing ModCon to increase the splice site HEXplorer weigth of 
 ## the splice donor at position 103 to around 60% of the maximum
-suppressMessages(cdsSSHWincreased <- ModCon(cds, 103, optiRate=60))
-suppressMessages(cdsSSHWdecreased <- ModCon(cds, 103, optiRate=60, modconMode='suboptimalContext'))
+suppressMessages(cdsSSHWincreased <- ModCon(cds, 103, optiRate=60, nCores=1))
+suppressMessages(cdsSSHWdecreased <- ModCon(cds, 103, optiRate=60, optimizeContext=FALSE, nCores=1))
 cdsSSHWincreased
 cdsSSHWdecreased
 ```
+
+The resulting character strings hold the alternative nucleotide sequences 
+with either an increased or decreased SSHW for the index splice donor site
+at position 103. With setting the parameter `optiRate` to 60, the SSHW 
+increase and SSHW decrease was only performed to reach the around 60% of 
+the highest or lowest SSHW possible.
+Again, the new coding sequences encode the same amino acid sequence as 
+the original CDS.
+
+
 
 Changing the `optiRate` parameter of the `ModCon` function from the
 default value 100 triggers usage of the genetic algorithm, instead of
@@ -128,14 +147,20 @@ adjusted with the respective `ModCon` function parameter.
 ```{r, eval=TRUE}
 ## Executing ModCon to increase the splice site HEXplorer weigth of 
 ## the splice donor at position 103 to around 60% of the maximum
-suppressMessages(cdsSSHWincreased <- ModCon(cds, 103, modconMode='optimalContext',
-                                sdMaximalHBS=10, acMaximalMaxent=4, optiRate=50,
+suppressMessages(cdsSSHWincreased <- ModCon(cds, 103, 
+                                sdMaximalHBS=10, acMaximalMaxent=4, optiRate=60,
                                 nGenerations=5, parentSize=200, startParentSize=800,
                                 bestRate=50, semiLuckyRate=10, luckyRate=5,
                                 mutationRate=1e-03, nCores=1))
 
 cdsSSHWincreased
 ```
+
+As with the sliding window approach, the resulting character string holds
+the alternative nucleotide sequence with an increased SSHW for the 
+index splice donor site at position 103. The new CDS encodes the 
+same amino acid sequence as before.
+
 
 The size of the sequence surroundings can be set using the parameters
 `upChangeCodonsIn` and `downChangeCodonsIn`, which define the number of
@@ -144,9 +169,15 @@ codons to be adjusted around the splice site for SSHW adjustment (default=16).
 ```{r, eval=TRUE}
 ## Executing ModCon to decrease the splice site HEXplorer weigth of 
 ## the splice donor at position 103
-cdsSSHWdecreased <- ModCon(cds, 103, downChangeCodonsIn=20, upChangeCodonsIn=21)
+cdsSSHWdecreased <- ModCon(cds, 103, downChangeCodonsIn=20, upChangeCodonsIn=21, nCores=1)
 cdsSSHWdecreased
 ```
+
+As with the sliding window approach, the resulting character string holds
+the alternative nucleotide sequence with an decreased SSHW for the 
+index splice donor site at position 103. The new CDS encodes the 
+same amino acid sequence as before.
+
 
 The **ModCon** package additionally holds functions to increase or decrease
 the intrinsic strength (Hbond score) of a secific splice donor site while 
@@ -159,6 +190,10 @@ cdsHBondDown <- decreaseGTsiteStrength(cds, 103)
 cdsHBondUp <- increaseGTsiteStrength(cds, 103)
 cdsHBondDown
 ```
+
+`cdsHBondDown` states a coding sequence, encoding the same amino acid as the input CDS. However, a splice donor sequence at the stated index position within the CDS will be aimed to be decrased in its intrinsic strength.
+`cdsHBondUp` states a coding sequence, encoding the same amino acid as the input CDS. However, a splice donor sequence at the stated index position within the CDS will be aimed to be decrased in its intrinsic strength.
+
 
 Integrated functions also include functions to decrease the intrinisc strength
 of every splice donor or acceptor within a coding sequence, while considering 
@@ -177,6 +212,8 @@ cdsSDlow
 cdsSAlow
 ```
 
+`cdsSDlow` states a coding sequence, encoding the same amino acid as the input CDS. However, every potential splice donor sequence within the CDS, which exceeds a Hbond score treshold (`maxhbs`) will be aimed to be degraded in its intrinsic strength as much as possible. If, additionally, potential splice acceptor sites should be degraded in their intrinsic strengt, the following function `degradeSAs` will reduce the number of potential relevant splice acceptor sites within the CDS.
+`cdsSAlow` states a coding sequence, encoding the same amino acid as the input CDS. However, every potential splice donor sequence within the CDS, which exceeds a Hbond score treshold (`maxhbs`) and every potential splice acceptor site, which exceeds a certain MaxEntScan score treshold, will be aimed to be degraded in its intrinsic strength as much as possible.
 
 # Session info
 

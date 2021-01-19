@@ -71,48 +71,7 @@ sub makemaxentscores{
     }
     return @metables;
 }
-sub makewmmscores{
-    my $dir = "/bionet/geneyeo_essentials/MaxEntropy/webserver/splicemodels/";
-    my @list = ('me1s0acc1','me1s0acc2','me1s0acc3','me1s0acc4',
-		'me1s0acc5','me1s0acc6','me1s0acc7','me1s0acc8','me1s0acc9');
-    my @metables;
-    my $num = 0 ;
-    foreach my $file (@list) {
-	my $n = 0;
-	open (SCOREF,"<".$dir.$file) || die "Can't open $file!\n";
-	while(<SCOREF>) {
-	    chomp;
-	    $_=~ s/\s//;
-	    $metables[$num]{$n} = $_;
-	    $n++;
-	}
-	close(SCOREF);
-	#print STDERR $file."\t".$num."\t".$n."\n";
-	$num++;
-    }
-    return @metables;
-}
-sub makemmscores{
-    my $dir = "/bionet/geneyeo_essentials/MaxEntropy/webserver/splicemodels/";
-    my @list = ('me2s0acc1','me2s0acc2','me2s0acc3','me2s0acc4',
-		'me2s0acc5','me2s0acc6','me2s0acc7','me2s0acc8','me2s0acc9');
-    my @metables;
-    my $num = 0 ;
-    foreach my $file (@list) {
-	my $n = 0;
-	open (SCOREF,"<".$dir.$file) || die "Can't open $file!\n";
-	while(<SCOREF>) {
-	    chomp;
-	    $_=~ s/\s//;
-	    $metables[$num]{$n} = $_;
-	    $n++;
-	}
-	close(SCOREF);
-	#print STDERR $file."\t".$num."\t".$n."\n";
-	$num++;
-    }
-    return @metables;
-}
+
 sub maxentscore{
     my $seq = shift;
     my $table_ref = shift;

@@ -2,9 +2,9 @@ Package: ModCon
 Type: Package
 Title: ModCon
 Version: 0.99.0
-Authors@R: c(person("Johannes", "Ptok", role = c("aut", "cre"), email = "Johannes.Ptok@posteo.de"), person("Gene", "Yeo", role = c("ctb"), email = "geneyeo@ucsd.edu", comment = "first author for perl script to calculate MaxEntScan score of splice sites."))
-Description: Proposing a nucleotide sequence surrounding for splice donors to either activate or repress donor usage.
-License: file LICENSE
+Authors@R: person("Johannes", "Ptok", role = c("aut", "cre"), email = "Johannes.Ptok@posteo.de")
+Description: Collection of functions to calculate a nucleotide sequence surrounding for splice donors sites to either activate or repress donor usage. The proposed alternative nucleotide sequence encodes the same amino acid and could be applied e.g. in reporter systems to silence or activate cryptic splice donor sites.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 VignetteBuilder: knitr
@@ -13,10 +13,11 @@ Depends:
     parallel,
     utils,
     stats,
-    R (>= 3.6)
+    R (>= 4.1)
 Suggests: 
     testthat,
-    knitr
+    knitr,
+    rmarkdown
 selectBestAndMean: Installation of any version of Perl is needed (e.g. strawberry perl).
 biocViews: FunctionalGenomics, AlternativeSplicing
 URL: https://github.com/caggtaagtat/ModCon
