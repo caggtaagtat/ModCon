@@ -11,7 +11,7 @@ Start graphical user interface for the ModCon application.
 Shiny app
 }
 \examples{
-\dontrun{
+\donttest{
 startModConApp()
 }
 }

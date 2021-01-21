@@ -241,7 +241,7 @@ server <- function(input, output, session) {
                                     paste0("Output CDS: ", after)))
       row.names(outputTable) <- NULL
       names(outputTable) <- NULL
-      write.table(outputTable, file, row.names = F, quote = F)
+      write.table(outputTable, file, row.names = FALSE, quote = FALSE)
     }
   )
   
