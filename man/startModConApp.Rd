@@ -1,8 +1,8 @@
-\name{startModConApp.Rd}
-\alias{startModConApp.Rd}
+\name{startModConApp}
+\alias{startModConApp}
 \title{Start GUI of VarCon.}
 \usage{
-startModConApp.Rd()
+startModConApp()
 }
 \description{
 Start graphical user interface for the ModCon application.
@@ -12,6 +12,6 @@ Shiny app
 }
 \examples{
 \dontrun{
-startModConApp.Rd()
+startModConApp()
 }
 }

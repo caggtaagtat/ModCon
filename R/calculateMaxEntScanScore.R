@@ -64,5 +64,6 @@ calculateMaxEntScanScore <- function(seqVector, ssType) {
 
 
 # use_data(Codons, hbg, hex,  cds, overwrite = TRUE)
+# save(Codons, cds, hbg, hex, file="sysdata.rda", compress="xz")
 
 
