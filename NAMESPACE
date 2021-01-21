@@ -19,17 +19,16 @@ export(degradeSDs)
 export(generateRandomCodonsPerAA)
 export(getOverlappingVectorsFromVector)
 export(increaseGTsiteStrength)
-export(ModCon)
 export(mutatePopulation)
 export(recombineTwoSequences)
 export(selectBestAndMean)
 export(selectMatingIndividuals)
 export(slidingWindowHZEImanipulation)
 export(createCodonMatrix)
+export(startModConApp)
 
 ## Export required data
 export(hex)
-export(hex2)
 export(hbg)
 export(Codons)
 

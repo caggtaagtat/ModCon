@@ -121,7 +121,7 @@ changeSequenceHZEI <- function(inSeq, increaseHZEI=TRUE, nGenerations=30,
     clusterExport(clust, list("generateRandomCodonsPerAA", "fan"), envir=environment())
     clusterExport(clust, list("getOverlappingVectorsFromVector", "calculateHZEIint",
                               "hex", "Codons", "startingPopulation", "parent0",
-                              "increaseHZEI", "hex2", "wtSequence", "codonsInsert"),
+                              "increaseHZEI", "wtSequence", "codonsInsert"),
                   envir=environment())
 
     ## Generate first parent population
