@@ -14,7 +14,7 @@ First, please define the coding sequence of interest which holds the splice dono
 `cds <- "AGTAACAGTTAGACCAAAGGATAGA..." # coding sequence holding the SD of interest`
 <br/><br/>
 #### 3. Enter position of first SD sequence nucleotide
-Now, state the position of the first nucleotide of the splice donor sequence within the entered coding sequence, again be redefining the exemplary variable SD_seq_start_position.<br/>
+Now, state the position of the first nucleotide of the splice donor sequence within the entered coding sequence, again be redefining the exemplary variable sdSeqStart.<br/>
 `sdSeqStart <- 402`
 <br/><br/>
 #### 4. Execute the main ModCon function
