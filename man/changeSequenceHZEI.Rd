@@ -2,7 +2,7 @@
 \alias{changeSequenceHZEI}
 \title{Adjust HZEI integral of nucleotide sequence}
 \usage{
-changeSequenceHZEI(inSeq, increaseHZEI=TRUE, nGenerations=30, parentSize=300,
+changeSequenceHZEI(inSeq, increaseHZEI=TRUE, nGenerations=50, parentSize=300,
 startParentSize=1000, bestRate=50, semiLuckyRate=20, luckyRate=5, mutationRate=1e-04,
 optiRate=100, sdMaximalHBS=10, acMaximalMaxent=4, nCores=-1)
 }
@@ -40,7 +40,7 @@ inSeq <- 'ATGGAAGACGCCAAAAACATAAAGAAAGGCCCGGCGCCATTCTATCCGCTGGAAGATGGAACC'
 res <- changeSequenceHZEI(inSeq)
 
 ## Setting additional parameters
-res <- changeSequenceHZEI(inSeq, increaseHZEI=TRUE, nGenerations=30, parentSize=300,
+res <- changeSequenceHZEI(inSeq, increaseHZEI=TRUE, nGenerations=50, parentSize=300,
 startParentSize=1000, bestRate=50, semiLuckyRate=20, luckyRate=5, mutationRate=1e-04,
 optiRate=100, sdMaximalHBS=10, acMaximalMaxent=4, nCores=1)
 
