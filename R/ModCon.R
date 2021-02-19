@@ -2,7 +2,7 @@
 ModCon <- function(cds, sdSeqStartPosition, upChangeCodonsIn=16,
                    downChangeCodonsIn=16, optimizeContext=TRUE,
                    sdMaximalHBS=10, acMaximalMaxent=4, optiRate=100,
-                   nGenerations=30, parentSize=300, startParentSize=1000,
+                   nGenerations=50, parentSize=300, startParentSize=1000,
                    bestRate=40, semiLuckyRate=20, luckyRate=5,
                    mutationRate=1e-04, nCores=-1) {
 

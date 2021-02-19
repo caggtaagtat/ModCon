@@ -1,5 +1,5 @@
 ## Creating sequence population
-changeSequenceHZEI <- function(inSeq, increaseHZEI=TRUE, nGenerations=30,
+changeSequenceHZEI <- function(inSeq, increaseHZEI=TRUE, nGenerations=50,
                                parentSize=300, startParentSize=1000,
                                bestRate=50, semiLuckyRate=20, luckyRate=5,
                                mutationRate=1e-04, optiRate=100, sdMaximalHBS=10,
