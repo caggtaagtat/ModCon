@@ -1,7 +1,7 @@
 Package: ModCon
 Type: Package
 Title: Modifying splice site usage by changing the mRNP code, while maintaining the genetic code
-Version: 0.99.9
+Version: 0.99.10
 Authors@R: person("Johannes", "Ptok", role = c("aut", "cre"), email = "Johannes.Ptok@posteo.de", comment = c(ORCID = "0000-0002-0322-5649"))
 Description: Collection of functions to calculate a nucleotide sequence surrounding for splice donors sites to either activate or repress donor usage. The proposed alternative nucleotide sequence encodes the same amino acid and could be applied e.g. in reporter systems to silence or activate cryptic splice donor sites.
 License: GPL-3 + file LICENSE
