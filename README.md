@@ -24,7 +24,7 @@ Select whether to optimize SD context for SD usage enhancement or silencing. Per
 <br/><br/>
 #### 5. OPTIONAL: Adjust additional parameters
 Additionally, if the circumstances may require adjustment of further parameters, please do so.<br/>
-`finalSequence <- ModCon(cds, sdSeqStartPosition, upChangeCodonsIn=16, downChangeCodonsIn=16, optimizeContext="optimalContext", sdMaximalHBS=10, acMaximalMaxent=4, optiRate=100, nGenerations=30, parentSize=300, startParentSize=1000, bestRate=40, semiLuckyRate=20, luckyRate=5, mutationRate=1e-04, nCores=-1)`
+`finalSequence <- ModCon(cds, sdSeqStartPosition, upChangeCodonsIn=16, downChangeCodonsIn=16, optimizeContext=TRUE, sdMaximalHBS=10, acMaximalMaxent=4, optiRate=100, nGenerations=30, parentSize=300, startParentSize=1000, bestRate=40, semiLuckyRate=20, luckyRate=5, mutationRate=1e-04, nCores=-1)`
 <br/><br/>
 
 ## Parameter settings
