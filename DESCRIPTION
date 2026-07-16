@@ -9,11 +9,12 @@ Encoding: UTF-8
 LazyData: true
 VignetteBuilder: knitr
 Depends: 
+    R (>= 4.1)
+Imports:
     data.table,
     parallel,
     utils,
-    stats,
-    R (>= 4.1)
+    stats
 Suggests: 
     testthat,
     knitr,
